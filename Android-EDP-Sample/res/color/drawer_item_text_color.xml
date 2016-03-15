@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2016. China Mobile IOT. All Rights Reserved.
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="true" android:color="@color/holo_green_light"/>
+    <item android:color="@color/primary_material_dark"/>
+
+</selector>
