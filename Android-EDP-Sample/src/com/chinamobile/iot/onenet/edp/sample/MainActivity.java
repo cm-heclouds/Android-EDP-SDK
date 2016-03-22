@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
                         SaveDataMsg saveDataMsg = (SaveDataMsg) msg;
                         for (byte[] bytes : saveDataMsg.getDataList()) {
                             Log.i(App.LOG_TAG, "存储数据: " + new String(bytes));
-                            mLogList.add("存储数据: " + new String(bytes));
+                            //mLogList.add("存储数据: " + new String(bytes));
                             NotificationController.getInstance(MainActivity.this).notifyMessage("存储数据: " + new String(bytes));
                         }
                         break;
