@@ -25,7 +25,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -66,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RequestLogFragment mRequestLogFragment;
     private GpsFragment mGpsFragment;
+    private FileFragment mFileFragment;
     private FragmentManager mFragmentManager;
 
     private RadioGroup mLeftDrawer;
@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
     private void initFragments() {
         mRequestLogFragment = RequestLogFragment.newInstance(mLogList);
         mGpsFragment = GpsFragment.newInstance();
+        mFileFragment = FileFragment.newInstance();
     }
 
     private void initViews() {
@@ -279,10 +280,14 @@ public class MainActivity extends AppCompatActivity {
                     getSupportActionBar().setTitle("请求日志");
                     break;
 
-                case R.id.radio_save_data:
+                case R.id.radio_gps:
                     mFragmentManager.beginTransaction().replace(R.id.content_frame, mGpsFragment).commit();
-                    getSupportActionBar().setTitle("上传数据");
+                    getSupportActionBar().setTitle("上传GPS数据");
                     break;
+
+                case R.id.radio_file:
+                    mFragmentManager.beginTransaction().replace(R.id.content_frame, mFileFragment).commit();
+                    getSupportActionBar().setTitle("上传文件");
             }
 
             mDrawerLayout.closeDrawers();
@@ -291,6 +296,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        if (mFileFragment != null && mFileFragment.onBackPressed()) {
+            return;
+        }
         new AlertDialog.Builder(this)
                 .setMessage("退出将断开连接，确认继续？")
                 .setPositiveButton("确认", new DialogInterface.OnClickListener() {

@@ -57,10 +57,17 @@
                 style="@style/DrawerItemStyle"/>
 
             <RadioButton
-                android:id="@+id/radio_save_data"
+                android:id="@+id/radio_gps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="上传数据"
+                android:text="上传GPS数据"
+                style="@style/DrawerItemStyle"/>
+
+            <RadioButton
+                android:id="@+id/radio_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="上传文件"
                 style="@style/DrawerItemStyle"/>
 
         </RadioGroup>
