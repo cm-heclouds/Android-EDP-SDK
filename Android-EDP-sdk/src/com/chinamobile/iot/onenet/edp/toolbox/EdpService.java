@@ -31,7 +31,7 @@ import android.os.IBinder;
 public class EdpService extends Service {
 
     private HeartbeatReceiver mHeartbeatReceiver = new HeartbeatReceiver();
-    private EdpClient mEdpClient = EdpClient.getInstance();
+    private EdpClient mEdpClient;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, EdpService.class);
@@ -51,6 +51,7 @@ public class EdpService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        mEdpClient = EdpClient.getInstance();
         mHeartbeatReceiver.register(this);
     }
 
