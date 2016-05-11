@@ -17,6 +17,21 @@ Android-EDP-SDK是对 **中移物联网公司 OneNET**平台 **EDP**（Enhanced 
 
 更多 **EDP** 相关的内容请在[文档中心](http://open.iot.10086.cn/apidoc)的**资源下载**页面下载EDP文档并阅读。
 
+## Android Studio配置
+```groovy
+allprojects {
+	repositories {
+		...
+		maven { url "https://jitpack.io" }
+	}
+}
+```
+```groovy
+dependencies {
+    compile 'com.github.cm-heclouds:Android-EDP-SDK:-SNAPSHOT'
+}
+```
+
 ## 相关接口
 
 ###### EdpClient.java
