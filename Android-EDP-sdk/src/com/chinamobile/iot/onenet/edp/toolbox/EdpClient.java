@@ -153,13 +153,7 @@ public class EdpClient {
      * @param authinfo  鉴权信息(apikey或authinfo)
      */
     public static void initialize(Context context, int type, String id, String authinfo) {
-        if (null == sInstance) {
-            synchronized (EdpClient.class) {
-                if (null == sInstance) {
-                    sInstance = new EdpClient(context, type, id, authinfo);
-                }
-            }
-        }
+        sInstance = new EdpClient(context, type, id, authinfo);
     }
 
     public static EdpClient getInstance() {
@@ -405,6 +399,7 @@ public class EdpClient {
         msg.setType(Message.DISCONNECT);
         enqueueMsg(msg);
         mMessageQueue.clear();
+        sInstance = null;
     }
 
     public void setListener(Listener l) {
