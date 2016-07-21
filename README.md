@@ -136,7 +136,7 @@ SDK简化了EDP API的使用，开发者只要专注于程序逻辑的编写，�
     };
 ```
 
-** 最后一定要记得在主工程的AndroidManifest.xml中注册发送心跳的服务，否则不会自动发送心跳 **
+**最后一定要记得在主工程的AndroidManifest.xml中注册发送心跳的服务，否则不会自动发送心跳**
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
