@@ -146,7 +146,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EdpClient.getInstance().disconnect();
+        if (EdpClient.getInstance().isConnected()) {
+            EdpClient.getInstance().disconnect();
+        }
     }
 
     private Listener mEdpListener = new Listener() {

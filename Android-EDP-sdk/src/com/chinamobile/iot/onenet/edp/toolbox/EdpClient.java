@@ -399,7 +399,6 @@ public class EdpClient {
         msg.setType(Message.DISCONNECT);
         enqueueMsg(msg);
         mMessageQueue.clear();
-        sInstance = null;
     }
 
     public void setListener(Listener l) {
