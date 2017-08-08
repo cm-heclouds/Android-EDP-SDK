@@ -1,6 +1,6 @@
 */gen/
 */bin/
-*.properties
+local.properties
 */project.properties
 *.apk
 *.ap_
