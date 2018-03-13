@@ -15,7 +15,7 @@ Android-EDP-SDK是对 **中移物联网公司 OneNET**平台 **EDP**（Enhanced 
 - 运行Android操作系统（API level 8+）并希望通过EDP协议接入OneNET的设备，包括：Phone、Tablet、Wear、TV、Android Auto，但不包括Brillo
 - 希望使用Android手机模拟EDP设备的开发者
 
-更多 **EDP** 相关的内容请在[文档中心](http://open.iot.10086.cn/apidoc)的**资源下载**页面下载EDP文档并阅读。
+更多 **EDP** 相关的内容请在[文档中心](https://open.iot.10086.cn/doc/art254.html#68)的**资源下载**页面下载EDP文档并阅读。
 
 ## Android Studio配置
 ```groovy
