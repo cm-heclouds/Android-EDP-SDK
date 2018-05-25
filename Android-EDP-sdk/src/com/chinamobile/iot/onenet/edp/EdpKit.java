@@ -150,6 +150,12 @@ public class EdpKit {
                 pushDataMsg.setSecretKey(secretKey);
                 pushDataMsg.unpackMsg(packet.data);
                 return pushDataMsg;
+            case Common.MsgType.CONNCLOSE:
+                EdpMsg connectCloseMsg = new ConnectCloseMsg();
+                connectCloseMsg.setAlgorithm(algorithm);
+                connectCloseMsg.setSecretKey(secretKey);
+                connectCloseMsg.unpackMsg(packet.data);
+                return connectCloseMsg;
             case Common.MsgType.SAVEDATA:
                 EdpMsg saveDataMsg = new SaveDataMsg();
                 saveDataMsg.setAlgorithm(algorithm);

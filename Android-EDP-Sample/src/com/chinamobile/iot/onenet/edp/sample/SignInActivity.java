@@ -16,6 +16,7 @@
 
 package com.chinamobile.iot.onenet.edp.sample;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.chinamobile.iot.onenet.edp.Common;
+import com.chinamobile.iot.onenet.edp.sample.utility.PermissionUtil;
 import com.chinamobile.iot.onenet.edp.toolbox.EdpClient;
 
 /**
@@ -69,6 +71,10 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         initViews();
+        PermissionUtil.requestPermissions(this, new String[] {
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        }, 1, null);
     }
 
     private void initViews() {

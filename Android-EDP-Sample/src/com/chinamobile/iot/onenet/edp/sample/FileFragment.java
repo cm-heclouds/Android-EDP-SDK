@@ -308,23 +308,25 @@ public class FileFragment extends Fragment implements AdapterView.OnItemClickLis
             }
             File[] files = FileUtil.listFiles(mPath);
             mDataList.clear();
-            for (File f : files) {
-                Item child = new Item();
-                child.setName(f.getName());
-                child.setPath(f.getAbsolutePath());
-                if (f.isDirectory()) {
-                    child.setIsDir(true);
-                } else {
-                    child.setIsDir(false);
-                    child.setSize(FileUtil.formatFileSize(FileUtil.getFileSize(f)));
+            if (files != null) {
+                for (File f : files) {
+                    Item child = new Item();
+                    child.setName(f.getName());
+                    child.setPath(f.getAbsolutePath());
+                    if (f.isDirectory()) {
+                        child.setIsDir(true);
+                    } else {
+                        child.setIsDir(false);
+                        child.setSize(FileUtil.formatFileSize(FileUtil.getFileSize(f)));
+                    }
+                    //Integer drawableId = FileUtil.getDrawableId(f);
+                    if (child.isDir()) {
+                        child.setDrawableId(R.string.icon_font_dir);
+                    } else {
+                        child.setDrawableId(R.string.icon_font_file);
+                    }
+                    mDataList.add(child);
                 }
-                //Integer drawableId = FileUtil.getDrawableId(f);
-                if (child.isDir()) {
-                    child.setDrawableId(R.string.icon_font_dir);
-                } else {
-                    child.setDrawableId(R.string.icon_font_file);
-                }
-                mDataList.add(child);
             }
             return null;
         }

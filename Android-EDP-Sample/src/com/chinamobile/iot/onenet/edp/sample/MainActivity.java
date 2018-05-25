@@ -34,6 +34,7 @@ import android.widget.Toast;
 
 import com.chinamobile.iot.onenet.edp.CmdMsg;
 import com.chinamobile.iot.onenet.edp.Common;
+import com.chinamobile.iot.onenet.edp.ConnectCloseMsg;
 import com.chinamobile.iot.onenet.edp.ConnectRespMsg;
 import com.chinamobile.iot.onenet.edp.EdpMsg;
 import com.chinamobile.iot.onenet.edp.EncryptRespMsg;
@@ -245,6 +246,14 @@ public class MainActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         EdpClient.getInstance().sendConnectReq();
+                        break;
+
+                    case Common.MsgType.CONNCLOSE:
+                        Log.i(App.LOG_TAG, "连接关闭");
+                        ConnectCloseMsg connectCloseMsg = (ConnectCloseMsg) msg;
+                        byte errorCode = connectCloseMsg.getErrorCode();
+                        mLogList.add("连接关闭, 错误码" + errorCode);
+                        NotificationController.getInstance(MainActivity.this).notifyMessage("连接关闭, 错误码" + errorCode);
                         break;
                 }
                 mRequestLogFragment.updateList(mLogList);

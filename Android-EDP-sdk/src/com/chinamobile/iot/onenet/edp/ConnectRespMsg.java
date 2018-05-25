@@ -62,14 +62,14 @@ public class ConnectRespMsg extends EdpMsg {
         int dataLen = msgData.length;
         //连接响应报文最小长度为2
         if (dataLen < 2) {
-            throw new IOException("packet size too short.size:" + dataLen);
+            throw new IOException("packet size too short. size:" + dataLen);
         }
 
         this.resCode = msgData[1];
         if (msgData[0] == 1) {
             this.hasLicenseCode = true;
             if (dataLen < 4) {
-                throw new IOException("packet has license code but size too short.size:" + dataLen);
+                throw new IOException("packet has license code but size too short. size:" + dataLen);
             }
             int licenseCodeLen = Common.twoByteToLen(msgData[2], msgData[3]);
             int dataRemain = dataLen - 4;

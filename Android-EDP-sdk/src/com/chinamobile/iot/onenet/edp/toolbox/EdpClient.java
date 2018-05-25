@@ -20,8 +20,11 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.text.TextUtils;
+import android.text.format.DateUtils;
 import android.util.Log;
 
 import com.chinamobile.iot.onenet.edp.CmdRespMsg;
@@ -617,9 +620,15 @@ public class EdpClient {
      */
     public void setupAlarm(Context context, long timeIntervalMillis, PendingIntent pendingIntent) {
         AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        long now = System.currentTimeMillis();
         am.cancel(pendingIntent);
-        am.set(AlarmManager.RTC, now + timeIntervalMillis, pendingIntent);
+        long triggerAtMillis = SystemClock.elapsedRealtime() + timeIntervalMillis;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            am.setExactAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            am.setExact(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
+        } else {
+            am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
+        }
     }
 
     /**

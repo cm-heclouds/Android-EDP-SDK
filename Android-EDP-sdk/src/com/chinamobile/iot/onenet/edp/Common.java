@@ -29,6 +29,7 @@ public class Common {
         public static final byte CONNREQ = (byte) 0x10;         // 连接建立请求
         public static final byte CONNRESP = (byte) 0x20;        // 连接响应
         public static final byte PUSHDATA = (byte) 0x30;        // 发送数据
+        public static final byte CONNCLOSE = (byte) 0x40;       // 连接关闭
         public static final byte SAVEDATA = (byte) 0x80;        // 保存数据
         public static final byte SAVERESP = (byte) 0x90;        // 保存确认响应
         public static final byte CMDREQ = (byte) 0xA0;          // 命令请求

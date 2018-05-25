@@ -62,7 +62,7 @@ public class PushDataMsg extends EdpMsg {
 
         //数据中必包含 源地址长度和源地址，长度最小为 2 + 5
         if (dataLen < 7) {
-            throw new IOException("packet size too short.size:" + dataLen);
+            throw new IOException("packet size too short. size:" + dataLen);
         }
 
         int addressLen = Common.twoByteToLen(msgData[0], msgData[1]);
