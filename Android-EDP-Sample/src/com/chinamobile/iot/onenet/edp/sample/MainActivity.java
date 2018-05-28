@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -73,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
     public String mDeviceId;
 
+    private PowerManager mPowerManager;
+    private PowerManager.WakeLock mWakeLock;
+
     public static void actionMain(Context context, String id, String authInfo, int connectType, int encryptType) {
         Intent intent = new Intent(context, MainActivity.class);
         intent.putExtra(EXTRA_CONNECT_TYPE, connectType);
@@ -86,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mPowerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "wake_lock");
+        mWakeLock.acquire();
+
         String id = getIntent().getStringExtra(EXTRA_ID);
         String authInfo = getIntent().getStringExtra(EXTRA_AUTH_INFO);
         int connetcType = getIntent().getIntExtra(EXTRA_CONNECT_TYPE, 1);
@@ -149,6 +158,9 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         if (EdpClient.getInstance().isConnected()) {
             EdpClient.getInstance().disconnect();
+        }
+        if (mWakeLock != null && mWakeLock.isHeld()) {
+            mWakeLock.release();
         }
     }
 
