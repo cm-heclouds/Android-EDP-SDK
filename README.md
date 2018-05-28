@@ -28,7 +28,7 @@ allprojects {
 ```
 ```groovy
 dependencies {
-    compile 'com.github.cm-heclouds:Android-EDP-SDK:-SNAPSHOT'
+    implementation 'com.github.cm-heclouds:Android-EDP-SDK:master-SNAPSHOT'
 }
 ```
 
