@@ -104,7 +104,7 @@ public class ConnectMsg extends EdpMsg {
      * @return packet
      */
     public byte[] packMsg(String deviceId, String userId, String authInfo) {
-        return packMsg(deviceId, userId, authInfo, (short) 300);    //默认时间设置为5分钟
+        return packMsg(deviceId, userId, authInfo, (short) 240);    //默认时间设置为4分钟
     }
 
     /**
@@ -115,6 +115,6 @@ public class ConnectMsg extends EdpMsg {
      * @return packet
      */
     public byte[] packMsg(String deviceId, String authInfo) {
-        return packMsg(deviceId, "0", authInfo, (short) 300);
+        return packMsg(deviceId, "0", authInfo, (short) 240);
     }
 }
