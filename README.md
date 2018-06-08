@@ -24,7 +24,7 @@ Android-EDP-SDK是对 **中移物联网公司 OneNET**平台 **EDP**（Enhanced 
 
 ```groovy
 dependencies {
-    implementation 'com.chinamobile.iot.onenet.edp:Android-EDP-SDK:1.1.0'
+    implementation 'com.chinamobile.iot.onenet.edp:Android-EDP-SDK:1.1.1'
 }
 ```
 

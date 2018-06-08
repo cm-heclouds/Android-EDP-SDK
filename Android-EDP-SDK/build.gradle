@@ -11,7 +11,7 @@ android {
     buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion rootProject.minSdkVersion
+        minSdkVersion 8
         targetSdkVersion rootProject.targetSdkVersion
     }
 
@@ -28,12 +28,11 @@ dependencies {
 def siteUrl = 'https://github.com/cm-heclouds/Android-EDP-SDK'
 def gitUrl = 'https://github.com/cm-heclouds/Android-EDP-SDK.git'
 group = "com.chinamobile.iot.onenet.edp"
-version = "1.1.0"
+version = "1.1.1"
 
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
-        pom.artifactId = 'Android-EDP-SDK'
         pom {
             project {
                 packaging 'aar'
