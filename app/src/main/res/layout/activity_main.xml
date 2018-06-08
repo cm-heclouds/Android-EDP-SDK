@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2016-2018. China Mobile Communications Corporation. All rights reserved.
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <RadioGroup
+            android:id="@+id/left_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="#FFFFFF">
+
+            <RadioButton
+                android:id="@+id/radio_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请求日志"
+                android:checked="true"
+                style="@style/DrawerItemStyle"/>
+
+            <RadioButton
+                android:id="@+id/radio_gps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="上传GPS数据"
+                style="@style/DrawerItemStyle"/>
+
+            <RadioButton
+                android:id="@+id/radio_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="上传文件"
+                style="@style/DrawerItemStyle"/>
+
+        </RadioGroup>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

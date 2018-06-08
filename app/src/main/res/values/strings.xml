@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2016-2018. China Mobile Communications Corporation. All rights reserved.
+  -->
+
+<resources>
+
+    <string name="app_name">Android-EDP-Sample</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+
+    <string name="network_unavailable_hint">网络不可用，请稍后再试</string>
+
+    <string name="icon_font_device">&#xe603;</string>
+    <string name="icon_font_sd_card">&#xecdf;</string>
+    <string name="icon_font_dir">&#xe670;</string>
+    <string name="icon_font_file">&#xe726;</string>
+    <string name="icon_font_pic">&#xf0043;</string>
+    <string name="icon_font_rar">&#xe669;</string>
+    <string name="icon_font_txt">&#xe626;</string>
+    <string name="icon_font_doc">&#xe758;</string>
+    <string name="icon_font_ppt">&#xe746;</string>
+    <string name="icon_font_xls">&#xe738;</string>
+    <string name="icon_font_audio">&#xe60f;</string>
+    <string name="icon_font_video">&#xe6e5;</string>
+    <string name="icon_font_apk">&#xe77d;</string>
+
+</resources>

@@ -1,5 +1,8 @@
 # Android-EDP-SDK
 
+[ ![Download](https://api.bintray.com/packages/darren/maven/Android-EDP-SDK/images/download.svg) ](https://bintray.com/darren/maven/Android-EDP-SDK/_latestVersion)
+[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)]()
+
 ## 简介
 
 Android-EDP-SDK是对 **中移物联网公司 OneNET**平台 **EDP**（Enhanced Device Protocol）接入协议在Android平台的实现。同时该项目也提供了一个示例工程。
@@ -18,17 +21,10 @@ Android-EDP-SDK是对 **中移物联网公司 OneNET**平台 **EDP**（Enhanced 
 更多 **EDP** 相关的内容请在[文档中心](https://open.iot.10086.cn/doc/art254.html#68)的**资源下载**页面下载EDP文档并阅读。
 
 ## Android Studio配置
-```groovy
-allprojects {
-	repositories {
-		...
-		maven { url "https://jitpack.io" }
-	}
-}
-```
+
 ```groovy
 dependencies {
-    implementation 'com.github.cm-heclouds:Android-EDP-SDK:master-SNAPSHOT'
+    implementation 'com.chinamobile.iot.onenet.edp:Android-EDP-SDK:1.1.0'
 }
 ```
 

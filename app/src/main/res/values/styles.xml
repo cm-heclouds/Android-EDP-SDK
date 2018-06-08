@@ -1,0 +1,48 @@
+<!--
+  ~ Copyright (c) 2016-2018. China Mobile Communications Corporation. All rights reserved.
+  -->
+
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="DrawerItemStyle">
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:drawableLeft">@drawable/drawable_item_indicator</item>
+        <item name="android:background">@drawable/drawable_item_background</item>
+        <item name="android:textColor">@color/drawer_item_text_color</item>
+        <item name="android:drawablePadding">32dp</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+</resources>

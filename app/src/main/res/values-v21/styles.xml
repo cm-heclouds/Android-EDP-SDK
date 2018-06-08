@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2016-2018. China Mobile Communications Corporation. All rights reserved.
+  -->
+
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:textColorPrimaryInverse">@color/abc_primary_text_material_dark</item>
+        <!-- Navigation bar color -->
+        <item name="android:navigationBarColor">@color/primary_material_dark</item>
+    </style>
+
+</resources>
