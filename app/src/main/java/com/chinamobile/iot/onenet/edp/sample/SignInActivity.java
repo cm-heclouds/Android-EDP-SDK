@@ -80,10 +80,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         mDeviceIdInputLayout.getEditText().addTextChangedListener(mTextWatcher);
         mAuthInfoInputLayout.getEditText().addTextChangedListener(mTextWatcher);
 
-        // 测试
-        mDeviceIdInputLayout.getEditText().setText("282749");
-        mAuthInfoInputLayout.getEditText().setText("L5lrqkQ3ubFq+i2ouBPuHrYAVAw=");
-
         mConnectTypeGroup.setOnCheckedChangeListener(mOnCheckedChangeListener);
         mConnectTypeGroup.check(R.id.connect_type_1);
 
